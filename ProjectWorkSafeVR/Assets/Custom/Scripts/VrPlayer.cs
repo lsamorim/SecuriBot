@@ -9,7 +9,7 @@ public class VrPlayer : MonoBehaviour
     [SerializeField]
     private float holdTimeToStorableItem = 1.5f;
 
-    private BasicItem currentHandleItem;
+    private BasicInteractableItem currentHandleItem;
 
     private bool tryRelease = false;
 
@@ -20,14 +20,14 @@ public class VrPlayer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("bt-a"))
         {
             if(currentHandleItem)
             {
                 tryRelease = true;
             }
         }
-        if(Input.GetMouseButtonUp(0) && tryRelease)
+        if(Input.GetButtonUp("bt-a") && tryRelease)
         {
             tryRelease = false;
             StopCoroutine("TryReleaseCurrentItem");
@@ -35,21 +35,21 @@ public class VrPlayer : MonoBehaviour
         }
     }
 
-    public void OnGazeItemEnter(BasicItem item)
+    public void OnGazeItemEnter(BasicInteractableItem item)
     {
         ResetGazeActions();
 
     }
-    public void OnGazeItemDown(BasicItem item)
+    public void OnGazeItemDown(BasicInteractableItem item)
     {
         ResetGazeActions();
 
         if (item.IsStorable)
             StartCoroutine("TryStoreItem", item);
     }
-    public void OnGazeItemClick(BasicItem item)
+    public void OnGazeItemClick(BasicInteractableItem item)
     {
-        if (currentHandleItem)
+        if (currentHandleItem || !item.CanCarry)
             return;
         ResetGazeActions();
 
@@ -75,7 +75,7 @@ public class VrPlayer : MonoBehaviour
             currentHandleItem = null;
         }
     }
-    private IEnumerator TryStoreItem(BasicItem item)
+    private IEnumerator TryStoreItem(BasicInteractableItem item)
     {
         yield return new WaitForSeconds(holdTimeToStorableItem);
         item.AttachTo(bag);

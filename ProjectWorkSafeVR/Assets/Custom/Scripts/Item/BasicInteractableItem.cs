@@ -1,19 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BasicItem : MonoBehaviour
+public class BasicInteractableItem : MonoBehaviour
 {
+    [SerializeField]
+    private string id;
+
 	[SerializeField]
-	private bool storable;
+	private bool storable, canCarry;
 	[SerializeField]
 	private Color onEnterOutlineColor = Color.white;
     [SerializeField]
     private float onEnterOutlineWidth = 0.008f;
 	[SerializeField, Multiline]
 	private string utilityDescription; 
-
-    [SerializeField]
-    private int identifier;
 
     private VrPlayer player;
 	private MeshRenderer m_renderer;
@@ -22,6 +22,10 @@ public class BasicItem : MonoBehaviour
     public bool IsStorable
     {
         get{ return storable; }
+    }
+    public bool CanCarry
+    {
+        get{ return canCarry; }
     }
 
 	void Start()

@@ -117,15 +117,15 @@ public class GazeInputModule : BaseInputModule {
     handlePendingClickRequired &= !GvrController.ClickButton;
 #endif  // UNITY_HAS_GOOGLEVR && (UNITY_ANDROID || UNITY_EDITOR)
 
-		if(string.IsNullOrEmpty(customInputName))
-		{
-			MouseProcess ();
-		}
-		else
-		{
-			CustomInputProcess ();
-		}
-    
+        if(string.IsNullOrEmpty(customInputName))
+        {
+            MouseProcess ();
+        }
+        else
+        {
+            CustomInputProcess ();
+        }
+
   }
 
 	private void MouseProcess()

@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Custom\Scripts\InterfaceDebug.cs" />
-     <Compile Include="Assets\Custom\Scripts\Item\BasicItem.cs" />
+     <Compile Include="Assets\Custom\Scripts\Item\BasicInteractableItem.cs" />
      <Compile Include="Assets\Custom\Scripts\Tests\ButtonTest.cs" />
      <Compile Include="Assets\Custom\Scripts\Tests\SoundTest.cs" />
      <Compile Include="Assets\Custom\Scripts\Utilities\Extension\AnimatorExtension.cs" />
