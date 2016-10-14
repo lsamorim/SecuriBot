@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\GoogleVR\Scripts\GazeInputModule.cs">
+    <Files>
+      <File FileName="Assets\GoogleVR\Scripts\GazeInputModule.cs" Line="145" Column="25" />
+      <File FileName="Assets\GoogleVR\Scripts\UI\GvrGaze.cs" Line="273" Column="28" />
+      <File FileName="Assets\Custom\Scripts\VrMovementBehaviour.cs" Line="25" Column="62" />
+      <File FileName="Assets\GoogleVR\Scripts\Controller\GvrController.cs" Line="52" Column="26" />
+      <File FileName="Assets\GoogleVR\Scripts\Controller\Internal\ControllerState.cs" Line="37" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
