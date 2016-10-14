@@ -1,27 +1,27 @@
 fileFormatVersion: 2
 guid: 1f60754a2653f294782f882a8a8fdfcf
-timeCreated: 1476465449
+timeCreated: 1476477856
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Sphere001
-    100002: Sphere002
-    100004: Sphere003
+    100000: Body
+    100002: LeftHand
+    100004: RightHand
     100006: //RootNode
-    400000: Sphere001
-    400002: Sphere002
-    400004: Sphere003
+    400000: Body
+    400002: LeftHand
+    400004: RightHand
     400006: //RootNode
-    2300000: Sphere001
-    2300002: Sphere002
-    2300004: Sphere003
-    3300000: Sphere001
-    3300002: Sphere002
-    3300004: Sphere003
-    4300000: Sphere001
-    4300002: Sphere002
-    4300004: Sphere003
+    2300000: Body
+    2300002: LeftHand
+    2300004: RightHand
+    3300000: Body
+    3300002: LeftHand
+    3300004: RightHand
+    4300000: Body
+    4300002: RightHand
+    4300004: LeftHand
     9500000: //RootNode
   materials:
     importMaterials: 1
