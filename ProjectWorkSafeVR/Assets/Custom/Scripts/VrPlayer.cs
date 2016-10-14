@@ -3,20 +3,81 @@ using System.Collections;
 
 public class VrPlayer : MonoBehaviour
 {
-	public Transform vrCamera;
-	public Vector3 positionOffset;
+    [SerializeField]
+    private Transform bag, hand;
+
+    [SerializeField]
+    private float holdTimeToStorableItem = 1.5f;
+
+    private BasicItem currentHandleItem;
+
+    private bool tryRelease = false;
 
 	void Start()
 	{
-	
+	    
 	}
-	
-	// Update is called once per frame
-	void Update()
-	{
-		vrCamera.position = transform.position + positionOffset;
-		Vector3 theRotation = transform.localEulerAngles;
-		theRotation.y = vrCamera.eulerAngles.y;
-		transform.localEulerAngles = theRotation;
-	}
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if(currentHandleItem)
+            {
+                tryRelease = true;
+            }
+        }
+        if(Input.GetMouseButtonUp(0) && tryRelease)
+        {
+            tryRelease = false;
+            StopCoroutine("TryReleaseCurrentItem");
+            StartCoroutine("TryReleaseCurrentItem");
+        }
+    }
+
+    public void OnGazeItemEnter(BasicItem item)
+    {
+        ResetGazeActions();
+
+    }
+    public void OnGazeItemDown(BasicItem item)
+    {
+        ResetGazeActions();
+
+        if (item.IsStorable)
+            StartCoroutine("TryStoreItem", item);
+    }
+    public void OnGazeItemClick(BasicItem item)
+    {
+        if (currentHandleItem)
+            return;
+        ResetGazeActions();
+
+        currentHandleItem = item;
+        currentHandleItem.AttachTo(hand);
+    }
+
+    private void ResetGazeActions()
+    {
+        StopCoroutine("TryStoreItem");
+        StopCoroutine("TryReleaseCurrentItem");
+        tryRelease = false;
+    }
+
+    private IEnumerator TryReleaseCurrentItem()
+    {
+        yield return new WaitForEndOfFrame();
+        yield return new WaitForEndOfFrame();
+
+        if (currentHandleItem)
+        {
+            currentHandleItem.Release();
+            currentHandleItem = null;
+        }
+    }
+    private IEnumerator TryStoreItem(BasicItem item)
+    {
+        yield return new WaitForSeconds(holdTimeToStorableItem);
+        item.AttachTo(bag);
+    }
 }

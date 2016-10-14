@@ -41,7 +41,7 @@ public class VrMovementBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        float h = Input.GetAxisRaw("Horizontal");
+        float h = 0;//Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
         if (v == 0 && h == 0)

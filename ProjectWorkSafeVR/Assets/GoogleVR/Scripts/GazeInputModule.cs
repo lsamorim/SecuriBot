@@ -67,6 +67,8 @@ public class GazeInputModule : BaseInputModule {
 
 	public string customInputName;
 
+    //public System.Action<Camera, GameObject> onGazeDown;
+
   /// @cond
   public override bool ShouldActivateModule() {
     bool activeState = base.ShouldActivateModule();
@@ -228,7 +230,7 @@ public class GazeInputModule : BaseInputModule {
 	private GameObject pointerDownGameObject = null;
 
   private void HandleDrag() {
-		//print ("drag");
+		
     bool moving = pointerData.IsPointerMoving();
 
     if (moving && pointerData.pointerDrag != null && !pointerData.dragging) {
@@ -263,7 +265,6 @@ public class GazeInputModule : BaseInputModule {
     }
 
     var go = pointerData.pointerCurrentRaycast.gameObject;
-	
     
 	// Send pointer up and click events.
     ExecuteEvents.Execute(pointerData.pointerPress, pointerData, ExecuteEvents.pointerUpHandler);
@@ -294,7 +295,11 @@ public class GazeInputModule : BaseInputModule {
   private void HandleTrigger() {
     var go = pointerData.pointerCurrentRaycast.gameObject;
 		pointerDownGameObject = go;
-		//print ("trigger");
+//
+//        if (go != null)
+//        {
+//            onGazeDown.Invoke(pointerData.enterEventCamera, go);
+//        }
     // Send pointer down event.
     pointerData.pressPosition = pointerData.position;
     pointerData.pointerPressRaycast = pointerData.pointerCurrentRaycast;
