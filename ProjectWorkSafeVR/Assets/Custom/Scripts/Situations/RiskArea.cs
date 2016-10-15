@@ -8,22 +8,24 @@ public class RiskArea : MonoBehaviour
     private bool solved;
 
     [SerializeField]
-    private GameObject object_onDanger;
+    private GameObject[] objects_onDanger;
 
     [SerializeField]
-    private GameObject object_onSafe;
+    private GameObject[] objects_onSafe;
 
     [SerializeField]
     private SphereDamageArea damageArea;
 
-    void Start()
+    public void Solved()
     {
-	    
-	}
-	
-	void LateUpdate()
-    {
-        
-        //Physics.OverlapSphereNonAlloc(damageArea, damageArea.radius, out others);
-	}
+        foreach(var danger in objects_onDanger)
+            danger.SetActive(false);
+
+        foreach(var safe in objects_onSafe)
+            safe.SetActive(true);
+
+        solved = true;
+    }
+
+
 }

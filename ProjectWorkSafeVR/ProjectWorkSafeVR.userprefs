@@ -1,10 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom\Scripts\Item\BasicInteractableItem.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom\Scripts\NPC\CharacterNPC.cs">
     <Files>
-      <File FileName="Assets\Custom\Scripts\VrPlayer.cs" Line="9" Column="21" />
-      <File FileName="Assets\Custom\Scripts\Item\BasicInteractableItem.cs" Line="51" Column="9" />
-      <File FileName="Assets\GoogleVR\Scripts\GazeInputModule.cs" Line="119" Column="1" />
+      <File FileName="Assets\Custom\Scripts\NPC\CharacterNPC.cs" Line="83" Column="9" />
+      <File FileName="Assets\Custom\Scripts\NPC\MoveActionNPC.cs" Line="4" Column="39" />
+      <File FileName="Assets\Custom\Scripts\Situations\RiskArea.cs" Line="30" Column="5" />
+      <File FileName="Assets\Custom\Scripts\Item\ProblemItem.cs" Line="40" Column="10" />
+      <File FileName="Assets\Custom\Scripts\Item\BasicInteractableItem.cs" Line="108" Column="11" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

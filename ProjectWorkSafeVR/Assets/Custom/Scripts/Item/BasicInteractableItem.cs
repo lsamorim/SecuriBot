@@ -5,6 +5,10 @@ public class BasicInteractableItem : MonoBehaviour
 {
     [SerializeField]
     private string id;
+    public string Id
+    {
+        get{ return id; }
+    }
 
 	[SerializeField]
 	private bool storable, canCarry;
@@ -82,7 +86,7 @@ public class BasicInteractableItem : MonoBehaviour
 	{
         player.OnGazeItemEnter(this);
         //StartCoroutine("OnGazeEnterEffect");
-        m_renderer.material.color = onGazeEnterColor;
+        ItemToColor(onGazeEnterColor);
 	}
     public virtual void OnGazeExit()
     {
@@ -90,7 +94,7 @@ public class BasicInteractableItem : MonoBehaviour
 
 //        StopCoroutine("OnGazeEnterEffect");
 //        iTween.Stop(m_renderer.gameObject);
-        m_renderer.material.color = Color.white;
+        ItemToColor(Color.white);
     }
     public virtual void OnGazeDown()
     {
@@ -99,6 +103,11 @@ public class BasicInteractableItem : MonoBehaviour
     public virtual void OnGazeClick()
     {
         player.OnGazeItemClick(this);
+    }
+
+    public void ItemToColor(Color color)
+    {
+        m_renderer.material.color = color;
     }
 
 //    protected virtual IEnumerator OnGazeEnterEffect()

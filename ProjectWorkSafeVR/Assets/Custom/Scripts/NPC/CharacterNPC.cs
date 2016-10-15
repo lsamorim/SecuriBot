@@ -11,7 +11,7 @@ public class CharacterNPC : MonoBehaviour
     private List<SphereDamageArea.DamageType> notTakeDamage;
 
     [SerializeField]
-    private ActionNPC[] routine;
+    private ActionData[] routine;
 
     [SerializeField]
     private float invunarableTime = 0.3f;
@@ -24,9 +24,12 @@ public class CharacterNPC : MonoBehaviour
 
     private NavMeshAgent m_agent;
 
+    private Animator m_animator;
+
     void Start ()
     {
         m_agent = GetComponentInChildren<NavMeshAgent>();
+        m_animator = GetComponentInChildren<Animator>();
         StartCoroutine("StartRoutine");
 	}
 
@@ -35,7 +38,12 @@ public class CharacterNPC : MonoBehaviour
         int currentAction = 0;
         while (true)
         {
-            yield return routine[currentAction].StartAction(this);
+            yield return new WaitForSeconds(routine[currentAction].timeBefore);
+
+            if(routine[currentAction].action)
+                yield return routine[currentAction].action.StartAction(this);
+
+            yield return new WaitForSeconds(routine[currentAction].timeAfter);
 
             currentAction++;
             if (currentAction == routine.Length)
@@ -45,6 +53,7 @@ public class CharacterNPC : MonoBehaviour
 
     public void MoveTo(Vector3 point, System.Action onCompletePath)
     {
+        m_animator.SetBool("walking", true);
         m_agent.SetDestination(point);
         StopCoroutine("CheckFinish");
         StartCoroutine("CheckFinish", onCompletePath);
@@ -57,6 +66,7 @@ public class CharacterNPC : MonoBehaviour
             yield return null;
         }
 
+        m_animator.SetBool("walking", false);
         onCompletePath();
     }
 
@@ -70,6 +80,9 @@ public class CharacterNPC : MonoBehaviour
 
         life = Mathf.Max(0, life - damage.Damage);
 
+        m_animator.SetInteger("damage_code", 1);
+        m_animator.SetTrigger("damage");
+
         StartCoroutine("StartInvunarable");
     }
     private IEnumerator StartInvunarable()
@@ -78,4 +91,12 @@ public class CharacterNPC : MonoBehaviour
         yield return new WaitForSeconds(invunarableTime);
         invunarable = false;
     }
+}
+
+[System.Serializable]
+public class ActionData
+{
+    public float timeBefore;
+    public ActionNPC action;
+    public float timeAfter;
 }

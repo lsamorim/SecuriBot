@@ -13,6 +13,13 @@ public class VrPlayer : MonoBehaviour
     private float holdTimeToStorableItem = 1.5f;
 
     private BasicInteractableItem currentHandleItem;
+    public BasicInteractableItem CurrentHandleItem
+    {
+        get
+        {
+            return currentHandleItem;
+        }
+    }
 
     private bool tryRelease = false;
 
