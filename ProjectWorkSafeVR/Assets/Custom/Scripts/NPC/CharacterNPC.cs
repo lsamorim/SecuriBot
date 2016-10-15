@@ -31,6 +31,8 @@ public class CharacterNPC : MonoBehaviour
     private Animator m_animator;
     private VrPlayer player;
 
+    public AudioSource audioSource;
+
     void Start ()
     {
         currentLife = life;
@@ -67,11 +69,17 @@ public class CharacterNPC : MonoBehaviour
     {
         if (currentLife <= 0)
             return;
+        StartCoroutine("WalkSound");
         m_animator.SetBool("walking", true);
         m_agent.SetDestination(point);
         StopCoroutine("CheckFinish");
         StartCoroutine("CheckFinish", onCompletePath);
 
+    }
+    private IEnumerator WalkSound()
+    {
+        yield return new WaitForSeconds(0.5f);
+        audioSource.Play();
     }
     private IEnumerator CheckFinish(System.Action onCompletePath)
     {
@@ -87,6 +95,7 @@ public class CharacterNPC : MonoBehaviour
             yield return null;
         }
 
+        audioSource.Pause();
         //print(gameObject.name + "shb");
         m_animator.SetBool("walking", false);
         onCompletePath();
