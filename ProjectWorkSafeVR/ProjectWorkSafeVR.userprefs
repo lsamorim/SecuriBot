@@ -1,17 +1,17 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom\Scripts\VrMenuCanvas.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Custom\Scripts\VrPlayer.cs">
     <Files>
-      <File FileName="Assets\Custom\Scripts\NPC\CharacterNPC.cs" Line="123" Column="34" />
-      <File FileName="Assets\Custom\Scripts\NPC\MoveActionNPC.cs" Line="92" Column="18" />
-      <File FileName="Assets\Custom\Scripts\NPC\ActionNPC.cs" Line="9" Column="5" />
-      <File FileName="Assets\Custom\Scripts\Situations\RiskArea.cs" Line="22" Column="22" />
-      <File FileName="Assets\Custom\Scripts\Item\ProblemItem.cs" Line="42" Column="25" />
-      <File FileName="Assets\Custom\Scripts\Item\BasicInteractableItem.cs" Line="79" Column="57" />
-      <File FileName="Assets\Custom\Scripts\VRCanvas.cs" Line="21" Column="6" />
-      <File FileName="Assets\Custom\Scripts\PointToMainCamera.cs" Line="14" Column="43" />
-      <File FileName="Assets\Custom\Scripts\VrPlayer.cs" Line="39" Column="35" />
-      <File FileName="Assets\Custom\Scripts\VrMenuCanvas.cs" Line="24" Column="39" />
+      <File FileName="Assets\Custom\Scripts\VrPlayer.cs" Line="122" Column="38" />
+      <File FileName="Assets\Custom\Scripts\NPC\CharacterNPC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\NPC\MoveActionNPC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\NPC\ActionNPC.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\Situations\RiskArea.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\Item\ProblemItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\Item\BasicInteractableItem.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\VRCanvas.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\PointToMainCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Custom\Scripts\VrMenuCanvas.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
