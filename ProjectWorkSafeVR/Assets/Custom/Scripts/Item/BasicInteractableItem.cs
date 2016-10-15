@@ -72,7 +72,6 @@ public class BasicInteractableItem : MonoBehaviour
 	
 	public virtual void OnGazeEnter()
 	{
-        print("ENter");
         player.OnGazeItemEnter(this);
         m_renderer.material.SetFloat("_Outline", onEnterOutlineWidth);
 	}
