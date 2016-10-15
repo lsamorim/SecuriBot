@@ -12,6 +12,8 @@ public class VrPlayer : MonoBehaviour
     [SerializeField]
     private float holdTimeToStorableItem = 1.5f;
 
+    public VrMenuCanvas menuCanvas;
+
     private BasicInteractableItem currentHandleItem;
     public BasicInteractableItem CurrentHandleItem
     {
@@ -35,6 +37,17 @@ public class VrPlayer : MonoBehaviour
             if(currentHandleItem)
             {
                 tryRelease = true;
+            }
+        }
+        if (Input.GetButtonDown("bt-b"))
+        {
+            if (menuCanvas.gameObject.activeInHierarchy)
+            {
+                menuCanvas.Hide();
+            }
+            else
+            {
+                menuCanvas.Show();
             }
         }
         if(Input.GetButtonUp("bt-a") && tryRelease)

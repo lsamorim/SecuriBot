@@ -67,6 +67,7 @@
      <Compile Include="Assets\Custom\Scripts\Utilities\Extension\TransformExtension.cs" />
      <Compile Include="Assets\Custom\Scripts\Utilities\Extension\VectorExtension.cs" />
      <Compile Include="Assets\Custom\Scripts\VRCanvas.cs" />
+     <Compile Include="Assets\Custom\Scripts\VrMenuCanvas.cs" />
      <Compile Include="Assets\Custom\Scripts\VrMovementBehaviour.cs" />
      <Compile Include="Assets\Custom\Scripts\VrPlayer.cs" />
      <Compile Include="Assets\Custom\_todelete\CustomVRController.cs" />
