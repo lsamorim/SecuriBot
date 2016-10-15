@@ -16,6 +16,12 @@ public class RiskArea : MonoBehaviour
     [SerializeField]
     private SphereDamageArea damageArea;
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+            Solved();
+    }
+
     public void Solved()
     {
         foreach(var danger in objects_onDanger)

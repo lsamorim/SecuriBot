@@ -76,11 +76,30 @@ public class VrPlayer : MonoBehaviour
         //vrCanvas.SetItemInfo(item);
     }
 
+    public GameObject notification;
+    public void Notification(string message)
+    {
+        notification.SetActive(true);
+        StartCoroutine("DeactiveNotification");
+    }
+    private IEnumerator DeactiveNotification()
+    {
+        yield return new WaitForSeconds(5);
+        notification.SetActive(false);
+    }
+
     private void ResetGazeActions()
     {
         StopCoroutine("TryStoreItem");
         StopCoroutine("TryReleaseCurrentItem");
         tryRelease = false;
+    }
+
+    public void UseHandleItem()
+    {
+        currentHandleItem.AttachTo(bag);
+        currentHandleItem = null;
+        vrCanvas.SetItemInfo(null);
     }
 
     private IEnumerator TryReleaseCurrentItem()

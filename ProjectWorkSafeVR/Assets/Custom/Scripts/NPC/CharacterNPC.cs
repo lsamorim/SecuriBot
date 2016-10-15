@@ -33,12 +33,11 @@ public class CharacterNPC : MonoBehaviour
 
     void Start ()
     {
+        currentLife = life;
         player = FindObjectOfType<VrPlayer>();
         m_agent = GetComponentInChildren<NavMeshAgent>();
         m_animator = GetComponentInChildren<Animator>();
         StartCoroutine("StartRoutine");
-
-        currentLife = life;
 	}
 
     private IEnumerator StartRoutine()
@@ -66,6 +65,8 @@ public class CharacterNPC : MonoBehaviour
 
     public void MoveTo(Vector3 point, System.Action onCompletePath)
     {
+        if (currentLife <= 0)
+            return;
         m_animator.SetBool("walking", true);
         m_agent.SetDestination(point);
         StopCoroutine("CheckFinish");
@@ -99,14 +100,28 @@ public class CharacterNPC : MonoBehaviour
         if (notTakeDamage.Contains(damage.Damage_Type))
             return;
 
+        if (currentLife <= 0)
+            return;
+
         currentLife = Mathf.Max(0, currentLife - damage.Damage);
 
         lifeBar.transform.localScale = lifeBar.transform.localScale.WithX((currentLife *1f)/ life);
 
-        m_animator.SetInteger("damage_code", 1);
-        m_animator.SetTrigger("damage");
+        if (currentLife > 0)
+        {
+            m_animator.SetInteger("damage_code", 1);
+            m_animator.SetTrigger("damage");
 
-        StartCoroutine("StartInvunarable");
+            StartCoroutine("StartInvunarable");
+        }
+        else
+        {
+            m_animator.SetTrigger("dead");
+            StopAllCoroutines();
+            //iTween.FadeTo(gameObject, 0, 1f);
+            player.Notification("Um acidente ocorreu com o funcionário Henrique.\nEle está sendo hospitalizado.");
+            Destroy(gameObject, 3f);
+        }
     }
     private IEnumerator StartInvunarable()
     {

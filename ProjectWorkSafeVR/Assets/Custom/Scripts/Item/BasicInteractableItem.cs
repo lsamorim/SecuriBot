@@ -22,6 +22,7 @@ public class BasicInteractableItem : MonoBehaviour
     protected VrPlayer player;
     protected MeshRenderer m_renderer;
     private Rigidbody m_rigidbody;
+    private Collider m_collider;
     private EventTrigger internal_eventTrigger;
     private EventTrigger m_eventTrigger
     {
@@ -75,7 +76,7 @@ public class BasicInteractableItem : MonoBehaviour
         m_renderer = GetComponentInChildren<MeshRenderer>();
 
         m_rigidbody = GetComponentInChildren<Rigidbody>();
-
+        m_collider = GetComponentInChildren<Collider>();
         AddListener(m_eventTrigger, EventTriggerType.PointerEnter, OnGazeEnter);
         AddListener(m_eventTrigger, EventTriggerType.PointerExit, OnGazeExit);
         AddListener(m_eventTrigger, EventTriggerType.PointerDown, OnGazeDown);
@@ -127,10 +128,12 @@ public class BasicInteractableItem : MonoBehaviour
         transform.SetParent(parent);
         transform.localPosition = Vector3.zero;
         m_rigidbody.isKinematic = true;
+        m_collider.enabled = false;
     }
     public virtual void Release()
     {
         transform.SetParent(null);
         m_rigidbody.isKinematic = false;
+        m_collider.enabled = true;
     }
 }

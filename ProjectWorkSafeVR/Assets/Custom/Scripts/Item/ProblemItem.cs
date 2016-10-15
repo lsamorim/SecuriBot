@@ -39,6 +39,7 @@ public class ProblemItem : BasicInteractableItem
         if(player.CurrentHandleItem && player.CurrentHandleItem.Id.ToLower() == Id.ToLower())
         {
             riskArea.Solved();
+            player.UseHandleItem();
         }
     }
 }

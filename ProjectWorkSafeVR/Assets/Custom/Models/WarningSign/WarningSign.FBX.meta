@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: cbd918d3bcf26fa4792d3eb88b180448
-timeCreated: 1476507859
+guid: 2dac25c0f92869140a825bb98bc33822
+timeCreated: 1476542472
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: LabCeiling
-    100002: //RootNode
-    100004: LabWalls
-    100006: Plane001
-    400000: LabCeiling
-    400002: //RootNode
-    400004: LabWalls
-    400006: Plane001
-    2300000: LabCeiling
-    2300002: LabWalls
-    2300004: Plane001
-    3300000: LabCeiling
-    3300002: LabWalls
-    3300004: Plane001
-    4300000: LabWalls
-    4300002: LabCeiling
-    4300004: Plane001
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cylinder001
     9500000: //RootNode
   materials:
     importMaterials: 1
