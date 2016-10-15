@@ -4,6 +4,9 @@ using System.Collections;
 public class VrPlayer : MonoBehaviour
 {
     [SerializeField]
+    private VRCanvas vrCanvas;
+
+    [SerializeField]
     private Transform bag, hand;
 
     [SerializeField]
@@ -15,7 +18,7 @@ public class VrPlayer : MonoBehaviour
 
 	void Start()
 	{
-	    
+        vrCanvas.SetItemInfo(null);
 	}
 
     void Update()
@@ -38,7 +41,11 @@ public class VrPlayer : MonoBehaviour
     public void OnGazeItemEnter(BasicInteractableItem item)
     {
         ResetGazeActions();
-
+        vrCanvas.SetItemInfo(item);
+    }
+    public void OnGazeItemExit(BasicInteractableItem item)
+    {
+        vrCanvas.SetItemInfo(null);
     }
     public void OnGazeItemDown(BasicInteractableItem item)
     {

@@ -9,14 +9,14 @@ public class BasicInteractableItem : MonoBehaviour
 	[SerializeField]
 	private bool storable, canCarry;
 	[SerializeField]
-	private Color onEnterOutlineColor = Color.white;
+	private Color onGazeEnterColor = Color.white;
     [SerializeField]
-    private float onEnterOutlineWidth = 0.008f;
-	[SerializeField, Multiline]
-	private string utilityDescription; 
+    private string itemName;
+    [SerializeField, Multiline]
+    private string itemDescription;
 
-    private VrPlayer player;
-	private MeshRenderer m_renderer;
+    protected VrPlayer player;
+    protected MeshRenderer m_renderer;
     private Rigidbody m_rigidbody;
     private EventTrigger internal_eventTrigger;
     private EventTrigger m_eventTrigger
@@ -46,6 +46,16 @@ public class BasicInteractableItem : MonoBehaviour
         get{ return canCarry; }
     }
 
+    public string ItemName
+    {
+        get { return itemName; }
+    }
+
+    public virtual string ItemDescription
+    {
+        get { return itemDescription; }
+    }
+
     private void AddListener(EventTrigger trigger, EventTriggerType type, System.Action callback)
     {
         EventTrigger.Entry entry = new EventTrigger.Entry( );
@@ -54,13 +64,11 @@ public class BasicInteractableItem : MonoBehaviour
         trigger.triggers.Add( entry );
     }
 
-	void Start()
+    protected virtual void Start()
 	{
         player = FindObjectOfType<VrPlayer>();
 
         m_renderer = GetComponentInChildren<MeshRenderer>();
-        m_renderer.material.SetFloat("_Outline", 0);
-        m_renderer.material.SetColor("_OutlineColor", onEnterOutlineColor);
 
         m_rigidbody = GetComponentInChildren<Rigidbody>();
 
@@ -73,12 +81,16 @@ public class BasicInteractableItem : MonoBehaviour
 	public virtual void OnGazeEnter()
 	{
         player.OnGazeItemEnter(this);
-        m_renderer.material.SetFloat("_Outline", onEnterOutlineWidth);
+        //StartCoroutine("OnGazeEnterEffect");
+        m_renderer.material.color = onGazeEnterColor;
 	}
     public virtual void OnGazeExit()
     {
-        player.OnGazeItemEnter(this);
-        m_renderer.material.SetFloat("_Outline", 0);
+        player.OnGazeItemExit(this);
+
+//        StopCoroutine("OnGazeEnterEffect");
+//        iTween.Stop(m_renderer.gameObject);
+        m_renderer.material.color = Color.white;
     }
     public virtual void OnGazeDown()
     {
@@ -88,6 +100,18 @@ public class BasicInteractableItem : MonoBehaviour
     {
         player.OnGazeItemClick(this);
     }
+
+//    protected virtual IEnumerator OnGazeEnterEffect()
+//    {
+//        iTween.Stop(m_renderer.gameObject);
+//        while (true)
+//        {
+//            iTween.ColorTo(m_renderer.gameObject, onGazeEnterColor, 0.5f);
+//            yield return new WaitForSeconds(0.55f);
+//            iTween.ColorTo(m_renderer.gameObject, Color.white, 0.5f);
+//            yield return new WaitForSeconds(0.55f);
+//        }
+//    }
 
     public virtual void AttachTo(Transform parent)
     {

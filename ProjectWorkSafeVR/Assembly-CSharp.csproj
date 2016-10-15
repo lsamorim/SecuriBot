@@ -47,9 +47,12 @@
   <ItemGroup>
      <Compile Include="Assets\Custom\Scripts\InterfaceDebug.cs" />
      <Compile Include="Assets\Custom\Scripts\Item\BasicInteractableItem.cs" />
+     <Compile Include="Assets\Custom\Scripts\Item\ProblemItem.cs" />
      <Compile Include="Assets\Custom\Scripts\NPC\ActionNPC.cs" />
      <Compile Include="Assets\Custom\Scripts\NPC\CharacterNPC.cs" />
      <Compile Include="Assets\Custom\Scripts\NPC\MoveActionNPC.cs" />
+     <Compile Include="Assets\Custom\Scripts\Situations\RiskArea.cs" />
+     <Compile Include="Assets\Custom\Scripts\Situations\SphereDamageArea.cs" />
      <Compile Include="Assets\Custom\Scripts\Tests\ButtonTest.cs" />
      <Compile Include="Assets\Custom\Scripts\Tests\SoundTest.cs" />
      <Compile Include="Assets\Custom\Scripts\Utilities\Extension\AnimatorExtension.cs" />
@@ -116,6 +119,8 @@
      <None Include="Assets\Plugins\Android\AndroidManifest.xml" />
      <None Include="Assets\Custom\Shaders\Outline.shader" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
+     <None Include="Assets\Custom\Shaders\Mobile-Diffuse-Color.shader" />
      <None Include="Assets\Plugins\Android\AndroidManifest-Daydream.xml" />
      <None Include="Assets\GoogleVR\Resources\UI\GvrReticleShader.shader" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
