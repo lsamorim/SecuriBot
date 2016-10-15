@@ -9,6 +9,11 @@ SecuriBot é um desafio imersivo que trata sobre segurança no ambiente de trabalh
 - Analógico movimenta o personagem (frente e trás)
 - Botão "A" interage com os objetos
 
+#Referências de tecnologias para o desenvolvimento:
+- Unity 3D 5.3.4f1
+- VR Box Cardboard
+- Google VR SDK
+
 # Bibliografia
 http://www.adm.ufba.br/sites/default/files/publicacao/arquivo/americo_diniz.pdf
 http://www.fundacentro.gov.br/arquivos/projetos/estatistica/boletins/boletimfundacentro1vfinal.pdf
