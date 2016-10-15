@@ -14,6 +14,13 @@ SecuriBot é um desafio imersivo que trata sobre segurança no ambiente de trabalh
 - VR Box Cardboard
 - Google VR SDK
 
+#Link da Apresentação:
+http://prezi.com/glkoerskcrjf/?utm_campaign=share&utm_medium=copy
+
+#Efeitos sonoros
+https://www.assetstore.unity3d.com/en/#!/content/54116
+https://www.youtube.com/watch?v=o3lB97wuXOQ
+
 # Bibliografia
 http://www.adm.ufba.br/sites/default/files/publicacao/arquivo/americo_diniz.pdf
 http://www.fundacentro.gov.br/arquivos/projetos/estatistica/boletins/boletimfundacentro1vfinal.pdf

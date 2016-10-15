@@ -25,6 +25,9 @@ public class VrPlayer : MonoBehaviour
 
     private bool tryRelease = false;
 
+    public AudioClip pickClip, dropClip, fixedClip;
+    public AudioSource effects;
+
 	void Start()
 	{
         vrCanvas.SetItemInfo(null);
@@ -82,6 +85,8 @@ public class VrPlayer : MonoBehaviour
 
         currentHandleItem = item;
         currentHandleItem.AttachTo(hand);
+
+        effects.PlayOneShot(pickClip);
     }
 
     public void OnGazeNPCEnter(CharacterNPC npc)
@@ -113,6 +118,8 @@ public class VrPlayer : MonoBehaviour
         currentHandleItem.AttachTo(bag);
         currentHandleItem = null;
         vrCanvas.SetItemInfo(null);
+
+        effects.PlayOneShot(fixedClip);
     }
 
     private IEnumerator TryReleaseCurrentItem()
@@ -124,6 +131,8 @@ public class VrPlayer : MonoBehaviour
         {
             currentHandleItem.Release();
             currentHandleItem = null;
+
+            effects.PlayOneShot(dropClip);
         }
     }
     private IEnumerator TryStoreItem(BasicInteractableItem item)
