@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class CharacterNPC : MonoBehaviour
 {
     [SerializeField]
     private int life;
+    private int currentLife;
 
     [SerializeField]
     private List<SphereDamageArea.DamageType> notTakeDamage;
@@ -22,15 +24,21 @@ public class CharacterNPC : MonoBehaviour
         get{ return invunarable; }
     }
 
+    public Transform lifeBar;
+
     private NavMeshAgent m_agent;
 
     private Animator m_animator;
+    private VrPlayer player;
 
     void Start ()
     {
+        player = FindObjectOfType<VrPlayer>();
         m_agent = GetComponentInChildren<NavMeshAgent>();
         m_animator = GetComponentInChildren<Animator>();
         StartCoroutine("StartRoutine");
+
+        currentLife = life;
 	}
 
     private IEnumerator StartRoutine()
@@ -51,6 +59,11 @@ public class CharacterNPC : MonoBehaviour
         }
     }
 
+    public void OnGazeEnter()
+    {
+        player.OnGazeNPCEnter(this);
+    }
+
     public void MoveTo(Vector3 point, System.Action onCompletePath)
     {
         m_animator.SetBool("walking", true);
@@ -61,11 +74,19 @@ public class CharacterNPC : MonoBehaviour
     }
     private IEnumerator CheckFinish(System.Action onCompletePath)
     {
-        while (m_agent.pathStatus != NavMeshPathStatus.PathComplete || m_agent.remainingDistance > m_agent.stoppingDistance)
+        yield return new WaitForSeconds(1);
+
+        while (m_agent.pathPending)
         {
             yield return null;
         }
 
+        while(m_agent.remainingDistance > m_agent.stoppingDistance)
+        {
+            yield return null;
+        }
+
+        //print(gameObject.name + "shb");
         m_animator.SetBool("walking", false);
         onCompletePath();
     }
@@ -78,7 +99,9 @@ public class CharacterNPC : MonoBehaviour
         if (notTakeDamage.Contains(damage.Damage_Type))
             return;
 
-        life = Mathf.Max(0, life - damage.Damage);
+        currentLife = Mathf.Max(0, currentLife - damage.Damage);
+
+        lifeBar.transform.localScale = lifeBar.transform.localScale.WithX((currentLife *1f)/ life);
 
         m_animator.SetInteger("damage_code", 1);
         m_animator.SetTrigger("damage");

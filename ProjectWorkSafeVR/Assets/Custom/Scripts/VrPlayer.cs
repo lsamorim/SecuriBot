@@ -71,6 +71,11 @@ public class VrPlayer : MonoBehaviour
         currentHandleItem.AttachTo(hand);
     }
 
+    public void OnGazeNPCEnter(CharacterNPC npc)
+    {
+        //vrCanvas.SetItemInfo(item);
+    }
+
     private void ResetGazeActions()
     {
         StopCoroutine("TryStoreItem");

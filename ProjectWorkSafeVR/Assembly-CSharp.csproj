@@ -51,6 +51,7 @@
      <Compile Include="Assets\Custom\Scripts\NPC\ActionNPC.cs" />
      <Compile Include="Assets\Custom\Scripts\NPC\CharacterNPC.cs" />
      <Compile Include="Assets\Custom\Scripts\NPC\MoveActionNPC.cs" />
+     <Compile Include="Assets\Custom\Scripts\PointToMainCamera.cs" />
      <Compile Include="Assets\Custom\Scripts\Situations\RiskArea.cs" />
      <Compile Include="Assets\Custom\Scripts\Situations\SphereDamageArea.cs" />
      <Compile Include="Assets\Custom\Scripts\Tests\ButtonTest.cs" />
