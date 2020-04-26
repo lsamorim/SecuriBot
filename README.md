@@ -1,23 +1,25 @@
-#Projeto SecuriBot
-SecuriBot È um desafio imersivo que trata sobre seguranÁa no ambiente de trabalho. Na ìpeleî de um eficiente robozinho, o jogador deve vasculhar escritÛrios e ·reas de construÁ„o com riscos ultrajantemente gritantes de acidentes e funcion·rios exageradamente descuidados, afim de eliminar possÌveis ameaÁas ‡ seguranÁa dos funcion·rios do local, e chamar a atenÁ„o de funcion·rios cujo descuido possa machucar a eles e outros. 
+# Projeto SecuriBot
+SecuriBot √© um desafio imersivo que trata sobre seguran√ßa no ambiente de trabalho. Na ‚Äúpele‚Äù de um eficiente robozinho, o jogador deve vasculhar escrit√≥rios e √°reas de constru√ß√£o com riscos ultrajantemente gritantes de acidentes e funcion√°rios exageradamente descuidados, afim de eliminar poss√≠veis amea√ßas √† seguran√ßa dos funcion√°rios do local, e chamar a aten√ß√£o de funcion√°rios cujo descuido possa machucar a eles e outros. 
 
-#Requisitos
-- Google Cardboard genÈrico
+<img src="./sample.png" height="400">
+
+# Requisitos
+- Google Cardboard gen√©rico
 - Controle bluetooth
 
-#InstruÁıes de jogabilidade
-- AnalÛgico movimenta o personagem (frente e tr·s)
-- Bot„o "A" interage com os objetos
+# Instru√ß√µes de jogabilidade
+- Anal√≥gico movimenta o personagem (frente e tr√°s)
+- Bot√£o "A" interage com os objetos
 
-#ReferÍncias de tecnologias para o desenvolvimento:
+# Refer√™ncias de tecnologias para o desenvolvimento:
 - Unity 3D 5.3.4f1
 - VR Box Cardboard
 - Google VR SDK
 
-#Link da ApresentaÁ„o:
+# Link da Apresenta√ß√£o:
 http://prezi.com/glkoerskcrjf/?utm_campaign=share&utm_medium=copy
 
-#Efeitos sonoros
+# Efeitos sonoros
 https://www.assetstore.unity3d.com/en/#!/content/54116
 https://www.youtube.com/watch?v=o3lB97wuXOQ
 
@@ -26,7 +28,7 @@ http://www.adm.ufba.br/sites/default/files/publicacao/arquivo/americo_diniz.pdf
 http://www.fundacentro.gov.br/arquivos/projetos/estatistica/boletins/boletimfundacentro1vfinal.pdf
 https://www.youtube.com/watch?v=-LPflHnfVdg
 
-# ReferÍncias:
+# Refer√™ncias:
 http://jobsimulatorgame.com/
 http://www.surgeonsim.com/
 http://www.dumbwaystodie.com/
