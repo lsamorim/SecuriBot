@@ -1,34 +1,34 @@
-# Projeto SecuriBot
-SecuriBot é um desafio imersivo que trata sobre segurança no ambiente de trabalho. Na “pele” de um eficiente robozinho, o jogador deve vasculhar escritórios e áreas de construção com riscos ultrajantemente gritantes de acidentes e funcionários exageradamente descuidados, afim de eliminar possíveis ameaças à segurança dos funcionários do local, e chamar a atenção de funcionários cujo descuido possa machucar a eles e outros. 
+# SecuriBot Project
+SecuriBot is an immersive challenge that deals with safety in the workplace. In the “skin” of an efficient robot, the player must search offices and construction areas with outrageously high risks of accidents and employees overly careless employees, in order to eliminate possible threats to the safety of site employees, and drawing the attention of employees whose carelessness can hurt them and others. 
 
 <img src="./sample.png" height="400">
 
-# Requisitos
-- Google Cardboard genérico
-- Controle bluetooth
+# Requirements
+- Generic Google Cardboard
+- Bluetooth Controller
 
 # Instruções de jogabilidade
-- Analógico movimenta o personagem (frente e trás)
-- Botão "A" interage com os objetos
+- Analog stick - moves the character (back and forth)
+- Button "A" - interacts with objects
 
-# Referências de tecnologias para o desenvolvimento:
+# Technology references for development:
 - Unity 3D 5.3.4f1
 - VR Box Cardboard
 - Google VR SDK
 
-# Link da Apresentação:
+# Presentation Link:
 http://prezi.com/glkoerskcrjf/?utm_campaign=share&utm_medium=copy
 
-# Efeitos sonoros
+# Sound Effects
 https://www.assetstore.unity3d.com/en/#!/content/54116
 https://www.youtube.com/watch?v=o3lB97wuXOQ
 
-# Bibliografia
+# Bibliography
 http://www.adm.ufba.br/sites/default/files/publicacao/arquivo/americo_diniz.pdf
 http://www.fundacentro.gov.br/arquivos/projetos/estatistica/boletins/boletimfundacentro1vfinal.pdf
 https://www.youtube.com/watch?v=-LPflHnfVdg
 
-# Referências:
+# References:
 http://jobsimulatorgame.com/
 http://www.surgeonsim.com/
 http://www.dumbwaystodie.com/
